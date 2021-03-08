@@ -6,25 +6,28 @@
     justify-content: center;
     border: 1px solid white;
     border-radius: 5px 20px 5px 20px;
-    padding: 10 10 10 10;
+    padding: 10px 10px 10px 10px;
 }
 
 .form {
     width: 450px;
-    margin: 20 auto;
+    margin: 20px auto;
 }
 
 .username, .password {
-    padding: 2 10;
+    padding: 2px 10px;
     border: 1px solid rgb(255, 0, 20);
     border-radius: 5px 20px 5px 20px;
+    outline: none;
 }
 
-input[type=submit] {
+.submit {
     border: 1px solid rgb(255, 0, 20);
     border-radius: 5px 20px 5px 20px;
     color: rgb(255, 0, 20);
-    padding: 2 20;
+    padding: 2px 20px;
+    margin: 15px 0 0 0;
+    outline: none;
 }
 
 body {
