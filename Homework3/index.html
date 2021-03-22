@@ -5,7 +5,7 @@
     <title>Pokemon API - HW3</title>
     <script>
         let url = "https://pokeapi.co/api/v2/pokemon/"
-        async function dohvatiPokemone() {
+        async function next() {
             fetch(url)
                 .then(async (response) => {
                     if (response.status > 199 && response.status < 300) {
@@ -43,12 +43,15 @@
         function displayPokemon(pokemon) {
             const ol = document.getElementById("list");
             const li = document.createElement("li");
+            const span = document.createElement("span");
             const button = document.createElement("button");
+
+            span.appendChild(document.createTextNode(pokemon.name));
 
             button.appendChild(document.createTextNode("Izbriši"))
             button.onclick = deletePokemon;
 
-            li.appendChild(document.createTextNode(pokemon.name));
+            li.appendChild(span);
             li.appendChild(button);
             ol.appendChild(li);
             console.log("Pokemon " + pokemon.name + " displayed")
@@ -59,19 +62,24 @@
             li.remove();
         }
     </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="list-container">
-        <ol id="list" class="list">
+        <ol id="list" class="list"></ol>
 
-        </ol>
-
+        <div class="direction-buttons">
+            <button onclick="previous()" disabled="true">
+                Natrag
+            </button>
+            <button onclick="next()">
+                Sljedeći
+            </button>
+        </div>
     </div>
-    <button onclick="dohvatiPokemone()">
-        Dohvati pokemone
-    </button>
 </body>
 
 </html>

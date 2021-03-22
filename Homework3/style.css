@@ -1,4 +1,22 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 li {
-    color: chocolate;
     margin: auto;
+    padding: 3px;
+    border-bottom: 1px black solid;
+}
+
+span {
+    display: inline-block;
+    margin: auto;
+    width: 100px;
 }
