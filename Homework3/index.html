@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pokemon API - HW3</title>
+    <script>
+        let url = "https://pokeapi.co/api/v2/pokemon/"
+        async function next() {
+            fetch(url)
+                .then(async (response) => {
+                    if (response.status > 199 && response.status < 300) {
+                        const pokemonJSON = await response.json();
+                        url = pokemonJSON.next;
+
+                        const pokemons = pokemonJSON.results;
+
+                        for (let i = 0; i < 20; i++) {
+                            displayPokemon(pokemons[i]);
+                        }
+
+                    } else {
+                        console.log("Response status was " + response.status);
+                    }
+
+                }).catch(err => {
+                    console.log(err);
+                })
+        }
+
+        async function dohvatiPokemona(pokemonURL) {
+            return fetch(pokemonURL).then(response => {
+
+                return response.json().then(res => {
+                    console.log("Dohvacen pokemon: " + res);
+                    return res;
+
+                }).catch(err => {
+                    console.log(err);
+                });
+            })
+        }
+
+        function displayPokemon(pokemon) {
+            const ol = document.getElementById("list");
+            const li = document.createElement("li");
+            const span = document.createElement("span");
+            const button = document.createElement("button");
+
+            span.appendChild(document.createTextNode(pokemon.name));
+
+            button.appendChild(document.createTextNode("Izbriši"))
+            button.onclick = deletePokemon;
+
+            li.appendChild(span);
+            li.appendChild(button);
+            ol.appendChild(li);
+            console.log("Pokemon " + pokemon.name + " displayed")
+        }
+
+        function deletePokemon(event) {
+            const li = event.srcElement.parentElement;
+            li.remove();
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="list-container">
+        <ol id="list" class="list"></ol>
+
+        <div class="direction-buttons">
+            <button onclick="previous()" disabled="true">
+                Natrag
+            </button>
+            <button onclick="next()">
+                Sljedeći
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
