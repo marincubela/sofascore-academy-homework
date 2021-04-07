@@ -2,31 +2,65 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #f05f5f;
+  height: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.App-panel-child {
+  width: 100%;
+  height: 50%;
+}
+
+.pokeButton {
+  border: 1px solid rgb(255, 0, 20);
+  border-radius: 5px;
+  color: rgb(255, 0, 20);
+  background-color: white;
+  width: 100px;
+  padding: 2px 20px;
+  margin: 5px;
+  justify-content: center;
+}
+
+.PokeItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+.PokeList {
+  width: 100%;
+  margin: auto;
+}
+
+.PokeImg {
+  width: 200px;
+  height: auto;
+
 }
