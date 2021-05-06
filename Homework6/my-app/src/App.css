@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.header {
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9826c;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+    text-align: center;
+    color: #f9826c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    margin: 20px;
+    height: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.todoInput {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #f9826c;
+    min-width: 450px;
+    max-height: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoItem {
+    margin: 0 100px;
+    color: black;
+    justify-content: space-between;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    background: none;
+}
+
+.filterSpan {
+    color: #000;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.selectedFilter {
+    color: green;
+}
+
+hr {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.itemTask {
+    text-align: left;
+    overflow: auto;
 }
