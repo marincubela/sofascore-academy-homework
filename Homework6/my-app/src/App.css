@@ -1,0 +1,68 @@
+.header {
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9826c;
+    color: white;
+}
+
+.main {
+    text-align: center;
+    color: #f9826c;
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin: 20px;
+    height: 50px;
+}
+
+.todoInput {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #f9826c;
+    min-width: 450px;
+    max-height: 50px;
+}
+
+.todoItem {
+    margin: 0 100px;
+    color: black;
+    justify-content: space-between;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    background: none;
+}
+
+.filterSpan {
+    color: #000;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.selectedFilter {
+    color: green;
+}
+
+hr {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.itemTask {
+    text-align: left;
+    overflow: auto;
+}
