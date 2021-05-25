@@ -10,7 +10,6 @@ export function Category(props) {
       const data = await (
         await fetch(
           `https://master.dev.sofascore.com/api/v1/category/${id}/scheduled-events/2021-05-07`
-          //`https://master.dev.sofascore.com/api/v1/category/1/scheduled-events/2021-05-07`
         )
       ).json();
       setEvents(data);
