@@ -20,6 +20,19 @@ body {
     height: 70px;
 }
 
+.sport-header {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+    background-color: rgb(0, 66, 123);
+    color: white;
+    height: 50px;
+}
+
 
 .card {
     border: 1px solid #6a6a81;

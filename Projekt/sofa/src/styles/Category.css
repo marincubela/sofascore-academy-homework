@@ -1,8 +1,8 @@
 .category-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 100px auto;
+    margin: 150px auto;
     max-width: 1200px;
 }
 

@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { CategoryListItem } from "./CategoryListItem";
+import { useParams } from "react-router";
 import "../../../styles/Category.css";
 
 export function CategoryList() {
   const [categories, setCategories] = useState({ categories: [] });
-
+  const { category } = useParams();
   useEffect(() => {
     (async () => {
       const data = await (
         await fetch(
-          "https://master.dev.sofascore.com/api/v1/sport/football/2021-05-23/7200/categories"
+          `https://master.dev.sofascore.com/api/v1/sport/${
+            !!category ? category : "football"
+          }/2021-05-23/7200/categories`
         )
       ).json();
       setCategories(data);

@@ -1,0 +1,16 @@
+.event {    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 32px;
+    min-width: 290px;
+    max-width: 500px;
+    max-height: 150px;
+    min-height: 100px;
+    margin: 150px;
+    border: 1px solid #6a6a81;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 4px 3px 5px rgb(97 112 125);
+    transition: font-size 0.5s, box-shadow 0.5s;
+}
