@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import "../../../App.css";
+import "../../../styles/App.css";
+import "../../../styles/Category.css";
 
 export function CategoryListItem(props) {
   return (
     <Link to={`/category/${props.category.id}`}>
-      <div className="category-list-item">
-        {props.category.name} - {props.category.sport.name}
-      </div>
+      <div className="category-list-item card">{props.category.name}</div>
     </Link>
   );
 }

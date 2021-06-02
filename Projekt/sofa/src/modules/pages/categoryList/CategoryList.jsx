@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CategoryListItem } from "./CategoryListItem";
+import "../../../styles/Category.css";
 
 export function CategoryList() {
   const [categories, setCategories] = useState({ categories: [] });
@@ -16,7 +17,7 @@ export function CategoryList() {
   });
 
   return (
-    <>
+    <div className="category-list">
       {categories.categories.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
@@ -36,6 +37,6 @@ export function CategoryList() {
             ></CategoryListItem>
           ))
       )}
-    </>
+    </div>
   );
 }

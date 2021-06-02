@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import "../../../styles/Category.css";
 
 export function Category(props) {
   const [events, setEvents] = useState({ events: [] });
@@ -17,13 +18,13 @@ export function Category(props) {
   });
 
   return (
-    <>
+    <div className="category-list">
       {events.events.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
         events.events.map((v) => (
           <>
-            <div className="category-item">
+            <div className="category-item card">
               <h2>
                 {v.tournament.name} -{" "}
                 {!!v.roundInfo ? `Round: ${v.roundInfo.round}` : ``}
@@ -35,6 +36,6 @@ export function Category(props) {
           </>
         ))
       )}
-    </>
+    </div>
   );
 }
