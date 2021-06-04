@@ -19,24 +19,34 @@ export function Category() {
   });
 
   return (
-    <div className="category-list">
+    <div className="event-list">
       {events.events.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
         events.events.map((v) => (
-          <>
-            <Link to={`/event/${v.id}`}>
-              <div className="category-item card">
-                <h2>
+          <Link to={`/event/${v.id}`} key={v.id}>
+            <div className="event-item card">
+              {!!v.tournament && !!v.tournament.uniqueTournament ? (
+                <div className="image-container">
+                  <img
+                    src={`https://master.dev.sofascore.com/api/v1/unique-tournament/${v.tournament.uniqueTournament.id}/image`}
+                    alt="Slika turnira"
+                  ></img>
+                </div>
+              ) : (
+                ""
+              )}
+              <div>
+                <h3>
                   {v.tournament.name} -{" "}
                   {!!v.roundInfo ? `Round: ${v.roundInfo.round}` : ``}
-                </h2>
-                <h1>
+                </h3>
+                <h2>
                   {v.homeTeam.name} - {v.awayTeam.name}
-                </h1>
+                </h2>
               </div>
-            </Link>
-          </>
+            </div>
+          </Link>
         ))
       )}
     </div>

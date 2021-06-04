@@ -11,6 +11,9 @@ function App() {
       <Header></Header>
       <SportHeader></SportHeader>
       <Switch>
+        <Route exact path="/">
+          <CategoryList></CategoryList>
+        </Route>
         <Route exact path="/football">
           <CategoryList></CategoryList>
         </Route>

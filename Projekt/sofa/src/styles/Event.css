@@ -1,16 +1,44 @@
 .event {    
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     font-size: 32px;
-    min-width: 290px;
-    max-width: 500px;
-    max-height: 150px;
-    min-height: 100px;
-    margin: 150px;
+    margin: 150px auto;
     border: 1px solid #6a6a81;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 4px 3px 5px rgb(97 112 125);
     transition: font-size 0.5s, box-shadow 0.5s;
+}
+
+.event-top-container {
+    display: flex;
+    padding: 10px;
+    /* margin: auto; */
+    align-items: center;
+    min-width: 700px;
+    justify-content: space-around;
+}
+
+.event-bottom-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-image {
+    width: 70px;
+    height: auto;
+}
+
+.event-result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.event-team-names {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

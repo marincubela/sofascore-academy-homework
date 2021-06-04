@@ -40,12 +40,12 @@ body {
     box-sizing: border-box;
     box-shadow: 4px 3px 5px rgb(97 112 125);
     transition: font-size 0.5s, box-shadow 0.5s;
+    padding: 10px;
     min-width: 290px;
     max-width: 700px;
 }
 
 .card:hover {
-    font-size: larger;
     box-shadow: 4px 3px 5px rgb(52 59 64);
 }
 
@@ -56,4 +56,14 @@ a, a:focus, a:active {
 
 a:hover {
     color:  rgb(0, 87, 163);
+}
+
+.image-container {
+    width: 100px;
+    margin: 0 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
