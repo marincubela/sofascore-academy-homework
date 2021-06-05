@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import "../../../styles/Categories.css";
+import "../../../styles/Category.css";
 
 export function Category() {
   const [events, setEvents] = useState({ events: [] });
@@ -41,9 +41,16 @@ export function Category() {
                   {v.tournament.name} -{" "}
                   {!!v.roundInfo ? `Round: ${v.roundInfo.round}` : ``}
                 </h3>
-                <h2>
-                  {v.homeTeam.name} - {v.awayTeam.name}
-                </h2>
+                <div className="event-names">
+                  <div className="event-home-score">
+                    <h2>{v.homeTeam.name}</h2>
+                    <h2>{v.homeScore.display}</h2>
+                  </div>
+                  <div className="event-away-score">
+                    <h2>{v.awayTeam.name}</h2>
+                    <h2>{v.awayScore.display}</h2>
+                  </div>
+                </div>
               </div>
             </div>
           </Link>

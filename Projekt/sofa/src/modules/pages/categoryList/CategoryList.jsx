@@ -6,6 +6,7 @@ import "../../../styles/Categories.css";
 export function CategoryList() {
   const [categories, setCategories] = useState(null);
   const { category } = useParams();
+
   useEffect(() => {
     (async () => {
       const data = await (
