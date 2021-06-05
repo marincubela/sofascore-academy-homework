@@ -5,6 +5,8 @@ import "../../../styles/Event.css";
 export function Event() {
   const [event, setEvent] = useState(null);
   const [tournamentId, setTournamentId] = useState(null);
+  const [date, setDate] = useState(null);
+  const [time, setTime] = useState(null);
   const { eventId } = useParams();
 
   useEffect(() => {
@@ -18,6 +20,24 @@ export function Event() {
   useEffect(() => {
     if (event !== null && event.event.tournament !== undefined)
       setTournamentId(event.event.tournament.uniqueTournament.id);
+  }, [event]);
+
+  useEffect(() => {
+    if (event !== null) {
+      var d = new Date(event.event.startTimestamp * 1000).toUTCString();
+      var date = "";
+      var time = "";
+      d.split(" ").forEach((s, i) => {
+        if (i < 4) {
+          date += s + " ";
+        } else {
+          time += s + " ";
+        }
+      });
+
+      setDate(date);
+      setTime(time);
+    }
   }, [event]);
 
   console.log(event);
@@ -38,16 +58,21 @@ export function Event() {
                 ></img>
               )}
             </div>
-            <div>
+            <div className="event-league-text">
               <div>{event.event.tournament.name}</div>
               <div>Round {event.event.roundInfo.round}</div>
             </div>
+            <div className="event-date">
+              <div>{date}</div>
+              <div>{time}</div>
+            </div>
           </div>
+          <hr />
           <div className="event-bottom-container">
             <div className="event-team-names">
-              <div>{event.event.homeTeam.name}</div>
-              <div>:</div>
-              <div>{event.event.awayTeam.name}</div>
+              <div className="event-home-team">{event.event.homeTeam.name}</div>
+              <div>-</div>
+              <div className="event-away-team">{event.event.awayTeam.name}</div>
             </div>
             <div className="event-result">
               <div className="team-image">

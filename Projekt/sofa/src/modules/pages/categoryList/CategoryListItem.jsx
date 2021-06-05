@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../../../styles/App.css";
-import "../../../styles/Category.css";
+import "../../../styles/Categories.css";
 
 export function CategoryListItem(props) {
   return (

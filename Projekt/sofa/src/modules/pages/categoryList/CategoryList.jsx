@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { CategoryListItem } from "./CategoryListItem";
 import { useParams } from "react-router";
-import "../../../styles/Category.css";
+import "../../../styles/Categories.css";
 
 export function CategoryList() {
-  const [categories, setCategories] = useState({ categories: [] });
+  const [categories, setCategories] = useState(null);
   const { category } = useParams();
   useEffect(() => {
     (async () => {
@@ -21,7 +21,7 @@ export function CategoryList() {
 
   return (
     <div className="category-list">
-      {categories.categories.length === 0 ? (
+      {categories === null ? (
         <h1>Loading...</h1>
       ) : (
         categories.categories

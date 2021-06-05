@@ -4,26 +4,29 @@
     align-items: center;
     justify-content: space-evenly;
     font-size: 32px;
-    margin: 150px auto;
+    min-width: 300px;
+    margin: 150px 10px;
+    padding: 10px;
     border: 1px solid #6a6a81;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 4px 3px 5px rgb(97 112 125);
-    transition: font-size 0.5s, box-shadow 0.5s;
 }
 
 .event-top-container {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     padding: 10px;
-    /* margin: auto; */
-    align-items: center;
-    min-width: 700px;
-    justify-content: space-around;
 }
 
 .event-bottom-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .team-image {
@@ -35,10 +38,86 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 15px;
+    min-width: 280px;
 }
 
 .event-team-names {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+    font-size: 26px;
+}
+
+.event-home-team {
+    word-break: break-word;
+    max-width: 280px;
+}
+
+.event-away-team {
+    word-break: break-word;
+    max-width: 280px;
+}
+
+.event-league-text {
+    font-size: 30px;
+}
+
+.event-date {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+hr {
+    margin: 0;
+    min-width: 200px;
+    max-width: 250px;
+}
+
+@media only screen and (min-width: 600px) {
+    .event {
+        max-width: 700px;
+        min-width: 600px;
+        margin: 150px auto;
+    }
+    
+    .event-top-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 600px;
+        padding: 10px;
+    }
+
+    .event-bottom-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 600px;
+        padding: 10px;
+    }
+    
+    .event-team-names {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 26px;
+    }
+    
+    .event-result {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    hr {
+        min-width: 500px;
+        max-width: 600px;
+    }
 }

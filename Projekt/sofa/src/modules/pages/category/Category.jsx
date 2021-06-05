@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import "../../../styles/Category.css";
+import "../../../styles/Categories.css";
 
 export function Category() {
   const [events, setEvents] = useState({ events: [] });
