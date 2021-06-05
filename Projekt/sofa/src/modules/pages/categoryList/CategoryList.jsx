@@ -3,17 +3,27 @@ import { CategoryListItem } from "./CategoryListItem";
 import { useParams } from "react-router";
 import "../../../styles/Categories.css";
 
+function pad(num, size) {
+  num = num.toString();
+  while (num.length < size) num = "0" + num;
+  return num;
+}
+
 export function CategoryList() {
   const [categories, setCategories] = useState(null);
   const { category } = useParams();
 
   useEffect(() => {
     (async () => {
+      const date = new Date();
       const data = await (
         await fetch(
           `https://master.dev.sofascore.com/api/v1/sport/${
             !!category ? category : "football"
-          }/2021-05-23/7200/categories`
+          }/${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(
+            date.getDate(),
+            2
+          )}/7200/categories`
         )
       ).json();
       setCategories(data);

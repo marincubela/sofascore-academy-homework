@@ -3,15 +3,25 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "../../../styles/Category.css";
 
+function pad(num, size) {
+  num = num.toString();
+  while (num.length < size) num = "0" + num;
+  return num;
+}
+
 export function Category() {
   const [events, setEvents] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     (async () => {
+      const date = new Date();
       const data = await (
         await fetch(
-          `https://master.dev.sofascore.com/api/v1/category/${id}/scheduled-events/2021-05-07`
+          `https://master.dev.sofascore.com/api/v1/category/${id}/scheduled-events/${date.getFullYear()}-${pad(
+            date.getMonth() + 1,
+            2
+          )}-${pad(date.getDate(), 2)}`
         )
       ).json();
       setEvents(data);
