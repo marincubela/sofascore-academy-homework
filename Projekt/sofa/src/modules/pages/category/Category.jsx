@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../../../styles/Category.css";
 
 export function Category() {
-  const [events, setEvents] = useState({ events: [] });
+  const [events, setEvents] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function Category() {
 
   return (
     <div className="event-list">
-      {events.events.length === 0 ? (
+      {events === null ? (
         <h1>Loading...</h1>
       ) : (
         events.events.map((v) => (
